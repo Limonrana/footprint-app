@@ -97,7 +97,7 @@
 					<h2 class="Futura text-white text-4xl font-bold text-center pb-4">Congrats!</h2>
 					<p class="pb-4 font-bold text-white text-center text-sm">You are all set!</p>
 					<div class="flex justify-around p-2">
-					<router-link class="Futura text-xl color-bg-green-1 py-3 px-6 rounded-2xl font-bold text-white" to="/">Let's go</router-link>
+					<router-link class="Futura text-xl color-bg-green-1 py-3 px-6 rounded-2xl font-bold text-white" to="/integration">Let's go</router-link>
 					</div>
 				</div>
 				<!-- eand aleart-container -->
