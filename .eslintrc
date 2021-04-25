@@ -1,0 +1,38 @@
+{
+  "extends": ["@vue/airbnb", "eslint:recommended", "prettier"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "no-console": 0,
+    "vue/state-in-constructor": 0,
+    "indent": 0,
+    "linebreak-style": 0,
+    "vue/prop-types": 0,
+    "vue/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".vue"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 4,
+        "semi": true,
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "plugins": ["prettier"]
+}

@@ -22,7 +22,7 @@
 					</div>
 				</div>
 			<!-- step line -->
-			
+
 			<!-- selling product area -->
 			<div>
 				<h2 class="font-futura text-2xl md:text-5xl text-white font-bold mb-14">Which products do you sell?</h2>
@@ -89,7 +89,7 @@
 							<div class="flex justify-center pt-6 md:pt-12 pb-4 md:pb-8">
 								<img src="../assets/images/food-icon.png">
 							</div>
-							<p class="text-white text-center">Food</p>   
+							<p class="text-white text-center">Food</p>
 						</div>
 					</div>
 					<div class="w-1/2  flex justify-center mb-4 md:mb-0  md:w-1/3 xl:w-1/6">
@@ -146,18 +146,18 @@
 <script>
 export default {
   name: 'Category',
-  methods:{
-      addCategory(event) {
-          let targetId = event.currentTarget.id;
-          let getId = document.getElementById(targetId);
-          if (getId.classList.contains('active')) {
-              getId.classList.remove('active');
-          } else {
-              getId.classList.add('active');
-          }
+  methods: {
+    addCategory(event) {
+      const targetId = event.currentTarget.id;
+      const getId = document.getElementById(targetId);
+      if (getId.classList.contains('active')) {
+        getId.classList.remove('active');
+      } else {
+        getId.classList.add('active');
       }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>

@@ -140,80 +140,81 @@
 </template>
 
 <script>
-import VSwatches from 'vue-swatches'
+import VSwatches from 'vue-swatches';
 
 // Import the styles too, typically in App.vue or main.js
-import 'vue-swatches/dist/vue-swatches.css'
+import 'vue-swatches/dist/vue-swatches.css';
+
 export default {
-    name: 'Integration',
-    // eslint-disable-next-line vue/no-unused-components
-    components: { VSwatches },
-    data() {
-        return {
-            selectField: 'dark',
-            background: 'black',
-            fontColor: '#ffffff',
-        }
+  name: 'Integration',
+  // eslint-disable-next-line vue/no-unused-components
+  components: { VSwatches },
+  data() {
+    return {
+      selectField: 'dark',
+      background: 'black',
+      fontColor: '#ffffff',
+    };
+  },
+  methods: {
+    showUpload() {
+      /* integration page upload file js */
+      const addFile = document.getElementById('uploadfile');
+      addFile.click();
     },
-    methods: {
-        showUpload() {
-            /* integration page upload file js */
-            let addFile = document.getElementById('uploadfile');
-            addFile.click();
-        },
-        selectStyle(inputValue) {
-            // Remove Old Ui
-            this.removeOldUI();
-            // New UI Setup
-            this.setupNewUI(inputValue);
-        },
-        removeOldUI() {
-            let oldId = this.selectField;
-            // Remove All Class
-            let element = document.getElementById(oldId);
-            let text = document.getElementById('text-' + oldId);
-            let icon = document.getElementById('icon-' + oldId);
-            element.classList.remove("border-2");
-            text.classList.remove("color-green-1");
-            icon.classList.remove("color-green-1");
-            // Other Color Add
-            text.classList.add("text-white");
-            icon.classList.add("text-white");
-        },
-        setupNewUI(inputValue){
-            // Append New Input
-            this.selectField = inputValue;
-            // Add All New Class
-            let newId = this.selectField;
-            let newElement = document.getElementById(newId);
-            let newText = document.getElementById('text-' + newId);
-            let newIcon = document.getElementById('icon-' + newId);
-            newElement.classList.add("border-2");
-            // Remove White color all class
-            newText.classList.remove("text-white");
-            newIcon.classList.remove("text-white");
-            // add active color class
-            newText.classList.add("color-green-1");
-            newIcon.classList.add("color-green-1");
-            this.backgoundStyle(inputValue);
-        },
-        backgoundStyle(inputValue) {
-            if (inputValue === 'light') {
-                this.background = 'transparent';
-            } else if (inputValue === 'dark') {
-                this.background = 'black';
-            } else {
-                let element = document.getElementById(inputValue);
-                let bg = this.background;
-                if (!element.classList.contains('border-2')) {
-                    this.background = 'transparent';
-                } else if (bg === 'black') {
-                    this.background = 'transparent';
-                }
-            }
+    selectStyle(inputValue) {
+      // Remove Old Ui
+      this.removeOldUI();
+      // New UI Setup
+      this.setupNewUI(inputValue);
+    },
+    removeOldUI() {
+      const oldId = this.selectField;
+      // Remove All Class
+      const element = document.getElementById(oldId);
+      const text = document.getElementById(`text-${oldId}`);
+      const icon = document.getElementById(`icon-${oldId}`);
+      element.classList.remove('border-2');
+      text.classList.remove('color-green-1');
+      icon.classList.remove('color-green-1');
+      // Other Color Add
+      text.classList.add('text-white');
+      icon.classList.add('text-white');
+    },
+    setupNewUI(inputValue) {
+      // Append New Input
+      this.selectField = inputValue;
+      // Add All New Class
+      const newId = this.selectField;
+      const newElement = document.getElementById(newId);
+      const newText = document.getElementById(`text-${newId}`);
+      const newIcon = document.getElementById(`icon-${newId}`);
+      newElement.classList.add('border-2');
+      // Remove White color all class
+      newText.classList.remove('text-white');
+      newIcon.classList.remove('text-white');
+      // add active color class
+      newText.classList.add('color-green-1');
+      newIcon.classList.add('color-green-1');
+      this.backgoundStyle(inputValue);
+    },
+    backgoundStyle(inputValue) {
+      if (inputValue === 'light') {
+        this.background = 'transparent';
+      } else if (inputValue === 'dark') {
+        this.background = 'black';
+      } else {
+        const element = document.getElementById(inputValue);
+        const bg = this.background;
+        if (!element.classList.contains('border-2')) {
+          this.background = 'transparent';
+        } else if (bg === 'black') {
+          this.background = 'transparent';
         }
-    }
-}
+      }
+    },
+  },
+};
 </script>
 
 <style>
